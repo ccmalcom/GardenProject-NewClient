@@ -6,6 +6,7 @@ import { Container, Row } from 'reactstrap';
 import GardenTable from './GardenTable';
 import GardenView from './GardenView';
 import GardenEdit from './GardenEdit';
+import { Table, Button } from 'reactstrap';
 
 const GardenIndex = (props) => {
 
@@ -58,7 +59,7 @@ const viewOff = () => {
 
 return (
 <div>
-    <button onClick={fetchGarden}>MyGarden</button>
+    <Button onClick={fetchGarden}>MyGarden</Button>
     <Container>
         <div>
             <GardenTable plants={plants} plantToView={plantToView} viewPlant={viewPlant} viewOn={viewOn} fetchGarden={fetchGarden} token={props.token} deletePlant={deletePlant} plantToDelete={plantToDelete} />

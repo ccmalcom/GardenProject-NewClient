@@ -1,5 +1,21 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import styled from 'styled-components';
+
+const Button1 = styled.button`
+background-color: rgb(65, 105, 65);
+border-color: rgb(65, 105, 65);
+margin-right: 20px;
+width: 100px;
+ `
+const Button2 = styled.button`
+background-color: red;
+width: 100px;
+ `
+
+
+
+
 
 
 const GardenTable = (props) => {
@@ -29,8 +45,8 @@ const GardenTable = (props) => {
                 <td>{plant.waterNeeds}</td>
                 <td>{plant.fertilizerNeeds}</td>
                 <td>
-                    <button onClick={() => {props.viewOn(); props.viewPlant(plant)}}>View</button>
-                    <Button onClick={() =>{props.deletePlant(plant); deleteGarden() }}>Delete</Button>
+                    <Button1 onClick={() => {props.viewOn(); props.viewPlant(plant)}}>View</Button1>
+                    <Button2 onClick={props.deletePlant(plant); deleteGarden}>Delete</Button2>
                 </td>
             </tr>
         )
@@ -38,7 +54,7 @@ const GardenTable = (props) => {
     }
     return (
         <>
-            <h2>MyGarden Index</h2>
+            <h2>MyGarden</h2>
 
             <Table striped>
                 <thead>

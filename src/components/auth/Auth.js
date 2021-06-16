@@ -3,6 +3,18 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Register from './Register';
 import Login from './Login';
 import styled from 'styled-components';
+import './Modal.css';
+
+const Button1 = styled.button `
+border: none;
+margin-left: 41vw;
+height: 6vh;
+border-radius: 15px;
+background-color: rgb(65, 105, 65, 0.9);
+font-family: 'Yeseva One';
+font-size: 1.5em;
+color: white;
+`
 
 const ButtonA = styled.button`
     background-color: grey;
@@ -45,6 +57,7 @@ const Auth = (props) => {
     <div className='Box'>
         
         <ButtonA id='start' onClick={toggle}>Start Planting!</ButtonA>
+        <Button1 id='Start' onClick={toggle}>Start Planting!</Button1>
         
         <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalBody>
