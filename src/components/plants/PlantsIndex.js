@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import PlantEdit from './plantEdit/PlantEdit';
 import DeletePlant from './DeletePlant';
 
+
 const PlantsIndex = (props) => {
 
     const [plants, setPlants] = useState([]);

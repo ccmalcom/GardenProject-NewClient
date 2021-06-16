@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal';
 import img from '../assets/garden.jpg';
+import Auth from '../components/auth/Auth';
 
 
 const Wrapper = styled.div`
@@ -43,7 +44,7 @@ const Div = styled.div`
 `
 
 
-const Home = () => {
+const Home = (props) => {
     return (
         <Wrapper>
             <Fade cascade>
@@ -56,7 +57,7 @@ const Home = () => {
                 <Paragraph>
                 Search for plants below. If you can't find what you're looking for, add it to the list! Create an account (or login) to access MyGarden, where you can add plants from the index to your very own virtual garden to keep track of everything you grow and how to grow it.
                 </Paragraph>
-                
+                <Auth updateToken={props.updateToken} />
             </Fade>
         </Wrapper>
     )
