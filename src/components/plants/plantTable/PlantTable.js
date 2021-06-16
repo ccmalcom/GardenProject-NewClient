@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { Table } from 'reactstrap';
 // import './Plant.css'
 
 const DisplayPlants = (props) => {
@@ -23,7 +24,7 @@ const DisplayPlants = (props) => {
     return (
         <>
             <h2>Plant Index</h2>
-            <table>
+            <Table striped>
                 <thead>
                     <tr>
                         <th>Plant</th>
@@ -36,7 +37,7 @@ const DisplayPlants = (props) => {
                 <tbody>
                     {plantMapper()}
                 </tbody>
-            </table>
+            </Table>
         </>
     )
 };

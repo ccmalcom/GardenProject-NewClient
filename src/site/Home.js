@@ -3,26 +3,27 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal';
 import img from '../assets/garden.jpg';
+import Auth from '../components/auth/Auth';
 
 
 const Wrapper = styled.div`
     background-image: url(${img});
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: auto;
     
 `
 const Title = styled.div`
     font-family: 'Yeseva One';
-    font-size: 100px;
+    font-size: 8vw;
     color: white;
     text-align: center;
-    padding-top: 90px;
+    
     `
 
 const Section = styled.div`
     font-family: 'Yeseva One';
-    font-size: 70px;
+    font-size: 5vw;
     color: white;
     text-align: center;
     
@@ -30,25 +31,32 @@ const Section = styled.div`
 
 const Paragraph = styled.p`
     font-family: 'Nunito';
-    font-size: 30px;
+    font-size: 2.5vw;
     color: white;
     text-align: center;
-    padding: 0px;
-    margin: 50px;
+    margin: 5% 0;
+
     `
 const Div = styled.div`
     padding: 50px;
     margin-left: 575px;
     font-family: 'Yeseva One';
 `
+const TextDiv = styled.div`
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
 
 
-const Home = () => {
+const Home = (props) => {
     return (
         <Wrapper>
             <Fade cascade>
+                <TextDiv>
                 <Title>
-                    <p>Plant it</p>
+                    <p>PlantIt</p>
                 </Title>
                 <Section>
                 <p>An open-source garden index, stocked by you.</p>
@@ -56,6 +64,8 @@ const Home = () => {
                 <Paragraph>
                 Search for plants below. If you can't find what you're looking for, add it to the list! Create an account (or login) to access MyGarden, where you can add plants from the index to your very own virtual garden to keep track of everything you grow and how to grow it.
                 </Paragraph>
+                <Auth updateToken={props.updateToken}/>
+                </TextDiv>
                 
             </Fade>
         </Wrapper>

@@ -2,7 +2,24 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Register from './Register';
 import Login from './Login';
+import styled from 'styled-components';
 
+const ButtonA = styled.button`
+    background-color: grey;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: 'Nunito';
+    font-size: 20px;
+    border-style: solid;
+    color: white;
+    letter-spacing: 1px;
+    &:hover{
+        background-color: #6C6C6C;
+        border-color: #6C6C6C;
+    }
+`
 
 const Auth = (props) => {
     const {
@@ -27,7 +44,7 @@ const Auth = (props) => {
 
     <div className='Box'>
         
-        <Button id='start' onClick={toggle}>Start Planting!</Button>
+        <ButtonA id='start' onClick={toggle}>Start Planting!</ButtonA>
         
         <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalBody>

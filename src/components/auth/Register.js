@@ -34,23 +34,23 @@ const Register = (props) => {
             <Form onSubmit={ handleSubmit }>
                 <FormGroup>
                     <Label htmlFor='firstName'>First Name</Label>
-                    <Input onChange={(e) => setFirstName(e.target.value)} name='firstName' value={firstName} />
+                    <Input required onChange={(e) => setFirstName(e.target.value)} name='firstName' value={firstName} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='lastName'>Last Name</Label>
-                    <Input onChange={(e) => setLastName(e.target.value)} name='lastName' value={lastName} />
+                    <Input required onChange={(e) => setLastName(e.target.value)} name='lastName' value={lastName} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='emailAddress'>Email</Label>
-                    <Input onChange={(e) => setEmailAddress(e.target.value)} name='emailAddress' value={emailAddress} />
+                    <Input required type='email' onChange={(e) => setEmailAddress(e.target.value)} name='emailAddress' value={emailAddress} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='password'>Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
+                    <Input required type='password' minLength='5' onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='zipCode'>Zipcode</Label>
-                    <Input onChange={(e) => setZipCode(e.target.value)} name='zipCode' value={zipCode} />
+                    <Input required onChange={(e) => setZipCode(e.target.value)} name='zipCode' value={zipCode} />
                 </FormGroup>
                 <br></br>
                 <Button type='submit'>Sign Up</Button>

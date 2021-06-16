@@ -13,6 +13,7 @@ const GardenIndex = (props) => {
     const [viewActive, setViewActive] = useState(false);
     const [plantToView, setPlantToView] = useState([]);
     const [editModalActive, setEditModalActive] = useState(false);
+    const [plantToDelete, setPlantToDelete] = useState([]);
 
 
     
@@ -47,6 +48,10 @@ const viewOff = () => {
     setViewActive(false)
 }
 
+    const deletePlant = (plant) =>{
+        setPlantToDelete(plant);
+    }
+
 // useEffect(() => {
     // fetchGarden();
 // }, [])
@@ -56,7 +61,7 @@ return (
     <button onClick={fetchGarden}>MyGarden</button>
     <Container>
         <div>
-            <GardenTable plants={plants} plantToView={plantToView} viewPlant={viewPlant} viewOn={viewOn} fetchGarden={fetchGarden} token={props.token} />
+            <GardenTable plants={plants} plantToView={plantToView} viewPlant={viewPlant} viewOn={viewOn} fetchGarden={fetchGarden} token={props.token} deletePlant={deletePlant} plantToDelete={plantToDelete} />
 
             {/* {viewActive ? <GardenView plantToView={plantToView} viewOff={viewOff} token={props.token} fetchGarden={fetchGarden} /> : <></>} */}
         </div>
