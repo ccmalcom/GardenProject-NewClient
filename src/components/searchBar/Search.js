@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
 
-const SearchPlants = () => {
+const Search = () => {
     const [plants, setPlants] = useState([]);
     
     const fetchPlants = (e) => {
@@ -90,5 +90,5 @@ const SearchPlants = () => {
     )
 }
 
-export default SearchPlants;
+export default Search;
 

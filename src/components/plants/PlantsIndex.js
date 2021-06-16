@@ -6,6 +6,7 @@ import AddToGarden from '../gardens/AddToGarden';
 import { Container, Row, Col } from 'reactstrap';
 import PlantEdit from './plantEdit/PlantEdit';
 import DeletePlant from './DeletePlant';
+import Search from '../searchBar/Search';
 
 const PlantsIndex = (props) => {
 
@@ -90,9 +91,11 @@ const PlantsIndex = (props) => {
     return (
         <Container>
             <div>
+                <Search />
                 <button onClick={createActiveOn}>PlantIt!</button>
                 <DisplayPlants plants={plants} viewPlant={viewPlant} viewOn={viewOn} addToGarden={addToGarden} gardenModalOn={gardenModalOn} fetchPlants={fetchPlants} token={props.token} />
             </div>
+            
             <div>
                 {viewActive ? <PlantView plantToView={plantToView} viewOff={viewOff} addToGarden={addToGarden} gardenModalOn={gardenModalOn} editPlant={editPlant} editModalOn={editModalOn} fetchPlants={fetchPlants} deleteModalOn={deleteModalOn} deleteThisPlant={deleteThisPlant}/> : null}
 
