@@ -1,9 +1,20 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import SearchBar from './SearchBar';
+import { Table } from 'reactstrap';
+import styled from 'styled-components';
 
 
 const Search = () => {
+    const Button1 = styled.button`
+background-color: #CCCC00;
+margin-right: 20px;
+width: 100px;
+`
+const Button2 = styled.button`
+background-color: rgb(65, 105, 65);
+width: 100px;
+`
     const [plants, setPlants] = useState([]);
     
     const fetchPlants = (e) => {
@@ -48,8 +59,8 @@ const Search = () => {
                 <td>{plant.waterNeeds}</td>
                 <td>{plant.fertilizerNeeds}</td>
                 <td>
-                    <button>MyGarden <b>+</b></button>
-                    <button>View</button>
+                    <Button1>MyGarden <b>+</b></Button1>
+                    <Button2>View</Button2>
                 </td>
             </tr>
             )
@@ -71,7 +82,7 @@ const Search = () => {
             </div>
             <>
             <h2>Search Results</h2>
-            <table>
+            <Table striped>
                 <thead>
                     <tr>
                         <th>Plant</th>
@@ -84,7 +95,7 @@ const Search = () => {
                 <tbody>
                     {searchMapper()}
                 </tbody>
-            </table>
+            </Table>
         </>
         </Router>
     )

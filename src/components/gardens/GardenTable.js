@@ -46,7 +46,7 @@ const GardenTable = (props) => {
                 <td>{plant.fertilizerNeeds}</td>
                 <td>
                     <Button1 onClick={() => {props.viewOn(); props.viewPlant(plant)}}>View</Button1>
-                    <Button2 onClick={props.deletePlant(plant); deleteGarden}>Delete</Button2>
+                    <Button2 onClick={()=>{props.deletePlant(plant); deleteGarden()}}>Delete</Button2>
                 </td>
             </tr>
         )

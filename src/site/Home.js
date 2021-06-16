@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `
 const Title = styled.div`
     font-family: 'Yeseva One';
-    font-size: 8vw;
+    font-size: 6vw;
     color: white;
     text-align: center;
     
@@ -23,7 +23,7 @@ const Title = styled.div`
 
 const Section = styled.div`
     font-family: 'Yeseva One';
-    font-size: 5vw;
+    font-size: 3vw;
     color: white;
     text-align: center;
     
@@ -31,7 +31,7 @@ const Section = styled.div`
 
 const Paragraph = styled.p`
     font-family: 'Nunito';
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     color: white;
     text-align: center;
     margin: 5% 0;
@@ -43,7 +43,7 @@ const Div = styled.div`
     font-family: 'Yeseva One';
 `
 const TextDiv = styled.div`
-    padding: 10%;
+    padding: 3% 5% 5%;
     display: flex;
     flex-direction: column;
     align-items: center;

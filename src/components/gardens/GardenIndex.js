@@ -7,9 +7,11 @@ import GardenTable from './GardenTable';
 import GardenView from './GardenView';
 import GardenEdit from './GardenEdit';
 import { Table, Button } from 'reactstrap';
+import styled from 'styled-components';
 
 const GardenIndex = (props) => {
-
+    
+    const [buttonClicked, setButtonClicked] = useState(false)
     const [plants, setPlants] = useState([]);
     const [viewActive, setViewActive] = useState(false);
     const [plantToView, setPlantToView] = useState([]);
@@ -57,10 +59,40 @@ const viewOff = () => {
     // fetchGarden();
 // }, [])
 
+const Button1 = styled.button `
+border: none;
+height: 6vh;
+border-radius: 15px;
+background-color: rgb(65, 105, 65, 0.9);
+font-family: 'Yeseva One';
+font-size: 1.5em;
+color: white;
+&:hover{
+    background-color: #6C757D;
+    border-color: #6C757D;
+`
+const Button2 = styled.button `
+border: none;
+height: auto;
+width: auto;
+padding: 10px 10px;
+border-radius: 15px;
+background-color: rgb(65, 105, 65, 0.9);
+font-family: 'Yeseva One';
+font-size: 1em;
+color: white;
+&:hover{
+    background-color: #6C757D;
+    border-color: #6C757D;
+`
+
+
 return (
 <div>
-    <Button onClick={fetchGarden}>MyGarden</Button>
+        {!buttonClicked ? 
+    <Button1 onClick={()=>{fetchGarden(); setButtonClicked(true)}}>Load MyGarden</Button1> :
     <Container>
+        <Button2 onClick={fetchGarden}>Refresh MyGarden</Button2>
         <div>
             <GardenTable plants={plants} plantToView={plantToView} viewPlant={viewPlant} viewOn={viewOn} fetchGarden={fetchGarden} token={props.token} deletePlant={deletePlant} plantToDelete={plantToDelete} />
 
@@ -71,6 +103,7 @@ return (
         {editModalActive ? <GardenEdit token={props.token} fetchGarden={fetchGarden} plantToView={plantToView} setEditModalActive={setEditModalActive}/>: null }
     </div>
     </Container>
+        }
     </div>
 )
 }
