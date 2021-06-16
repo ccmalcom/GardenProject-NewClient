@@ -1,22 +1,10 @@
 
 
 
-/*Start Planting button*/
-#start{
-    border: none;
-    margin-left: 41vw;
-    height: 6vh;
-    border-radius: 15px;
-    background-color: rgb(65, 105, 65, 0.9);
-    font-family: 'Yeseva One';
-    font-size: 1.5em;
-    color: white;
-}
 
-/*Login Modal*/
 .Login {
     height: 35vh;
-    width: 25vw;
+    width: 22vw;
     background-color: rgb(65, 105, 65);
     padding: 25px;
     border-radius: 30px;
@@ -25,7 +13,7 @@
     color: white;
 }
 button{
-    width: 22.25vw;
+    width: 19vw;
     align-content: center;
 }
 

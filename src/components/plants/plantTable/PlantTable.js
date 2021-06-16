@@ -1,5 +1,17 @@
 import React, {useState} from 'react';
+import styled from 'styled-components';
+import { Button, Table } from 'reactstrap'
 // import './Plant.css'
+
+const Button1 = styled.button`
+background-color: #CCCC00;
+margin-right: 20px;
+width: 100px;
+`
+const Button2 = styled.button`
+background-color: rgb(65, 105, 65);
+width: 100px;
+`
 
 const DisplayPlants = (props) => {
 
@@ -13,8 +25,8 @@ const DisplayPlants = (props) => {
                 <td>{plant.waterNeeds}</td>
                 <td>{plant.fertilizerNeeds}</td>
                 <td>
-                    <button onClick={()=>{props.gardenModalOn(); props.addToGarden(plant)}}>MyGarden <b>+</b></button>
-                    <button onClick={() => {props.viewOn(); props.viewPlant(plant)}}>View</button>
+                    <Button1 onClick={()=>{props.gardenModalOn(); props.addToGarden(plant)}}>MyGarden <b>+</b></Button1>
+                    <Button2 onClick={() => {props.viewOn(); props.viewPlant(plant)}}>View</Button2>
                 </td>
             </tr>
             )
@@ -23,7 +35,7 @@ const DisplayPlants = (props) => {
     return (
         <>
             <h2>Plant Index</h2>
-            <table>
+            <Table striped>
                 <thead>
                     <tr>
                         <th>Plant</th>
@@ -36,7 +48,7 @@ const DisplayPlants = (props) => {
                 <tbody>
                     {plantMapper()}
                 </tbody>
-            </table>
+            </Table>
         </>
     )
 };

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import styled from 'styled-components';
+
 
 function GardenView(props) {
     

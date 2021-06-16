@@ -5,14 +5,15 @@ import Sitebar from './site/Sitebar';
 import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
 
-
 import SearchBar from './components/searchBar/SearchBar';
 // import SearchPlants from './components/searchBar/Search';
 import Home from './site/Home';
 
 import PlantsIndex from './components/plants/PlantsIndex';
 import GardenIndex from './components/gardens/GardenIndex'
-
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
     
   }
 
-  const clearToken =()=>{
+  const clearSession =()=>{
     localStorage.clear();
     setSessionToken('');
   }
@@ -41,19 +42,13 @@ function App() {
   return (
     <div className="App">
       {console.log(sessionToken)}
-
-      <Sitebar />
-      <Home />
+      <Sitebar clearSession={clearSession}/>
+      <Home  updateToken={updateToken} />
       
-      <Auth updateToken={updateToken}/>
-
+      {/* <Auth updateToken={updateToken}/> */}
       
       <GardenIndex token={sessionToken}/>
-
       <PlantsIndex token={sessionToken}/>
-
-      
-
 
     </div>
   );
