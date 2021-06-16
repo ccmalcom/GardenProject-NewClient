@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { Button } from 'reactstrap'
+import { Button, Table } from 'reactstrap'
 // import './Plant.css'
 
 const Button1 = styled.button`
@@ -35,7 +35,7 @@ const DisplayPlants = (props) => {
     return (
         <>
             <h2>Plant Index</h2>
-            <table>
+            <Table striped>
                 <thead>
                     <tr>
                         <th>Plant</th>
@@ -48,7 +48,7 @@ const DisplayPlants = (props) => {
                 <tbody>
                     {plantMapper()}
                 </tbody>
-            </table>
+            </Table>
         </>
     )
 };

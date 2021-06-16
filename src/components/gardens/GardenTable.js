@@ -22,7 +22,8 @@ const GardenTable = (props) => {
 
 
     const deleteGarden = () => {
-        fetch(`https://wd85-plant-it2.herokuapp.com/garden/${props.plantToView.plantName}`, {
+        
+        fetch(`https://wd85-plant-it2.herokuapp.com/garden/${props.plantToDelete.plantName}`, {
             method: 'Delete',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -32,8 +33,6 @@ const GardenTable = (props) => {
                 .then(res => console.log(res))
                 .then(() => props.fetchGarden())
         }
-
-
 
 
     const gardenMapper = () => {
@@ -47,7 +46,7 @@ const GardenTable = (props) => {
                 <td>{plant.fertilizerNeeds}</td>
                 <td>
                     <Button1 onClick={() => {props.viewOn(); props.viewPlant(plant)}}>View</Button1>
-                    <Button2 onClick={deleteGarden}>Delete</Button2>
+                    <Button2 onClick={()=>{props.deletePlant(plant); deleteGarden()}}>Delete</Button2>
                 </td>
             </tr>
         )

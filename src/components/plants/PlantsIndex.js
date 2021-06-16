@@ -3,11 +3,11 @@ import DisplayPlants from './plantTable/PlantTable';
 import CreatePlant from './createPlant/CreatePlant';
 import PlantView from './PlantView';
 import AddToGarden from '../gardens/AddToGarden';
-import { Container, Row, Col } from 'reactstrap';
+import { Container,  } from 'reactstrap';
 import PlantEdit from './plantEdit/PlantEdit';
 import DeletePlant from './DeletePlant';
 import Search from '../searchBar/Search';
-
+import styled from 'styled-components';
 
 const PlantsIndex = (props) => {
 
@@ -89,11 +89,26 @@ const PlantsIndex = (props) => {
         fetchPlants();
     }, [])
 
+const Button1 = styled.button `
+border: none;
+height: auto;
+width: auto;
+padding: 10px 10px;
+border-radius: 15px;
+background-color: rgb(65, 105, 65, 0.9);
+font-family: 'Yeseva One';
+font-size: 1em;
+color: white;
+&:hover{
+    background-color: #6C757D;
+    border-color: #6C757D;
+`
+
     return (
         <Container>
             <div>
                 <Search />
-                <button onClick={createActiveOn}>PlantIt!</button>
+                <Button1 onClick={createActiveOn}>PlantIt!</Button1>
                 <DisplayPlants plants={plants} viewPlant={viewPlant} viewOn={viewOn} addToGarden={addToGarden} gardenModalOn={gardenModalOn} fetchPlants={fetchPlants} token={props.token} />
             </div>
             

@@ -31,7 +31,7 @@ function App() {
     
   }
 
-  const clearToken =()=>{
+  const clearSession =()=>{
     localStorage.clear();
     setSessionToken('');
   }
@@ -42,10 +42,10 @@ function App() {
   return (
     <div className="App">
       {console.log(sessionToken)}
-      <Router>
-        <Sitebar />
-      </Router>
-      <Home updateToken={updateToken}/>
+      <Sitebar clearSession={clearSession}/>
+      <Home  updateToken={updateToken} />
+      
+      {/* <Auth updateToken={updateToken}/> */}
       
       <GardenIndex token={sessionToken}/>
       <PlantsIndex token={sessionToken}/>
