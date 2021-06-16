@@ -8,6 +8,7 @@ import PlantEdit from './plantEdit/PlantEdit';
 import DeletePlant from './DeletePlant';
 import Search from '../searchBar/Search';
 
+
 const PlantsIndex = (props) => {
 
     const [plants, setPlants] = useState([]);

@@ -11,7 +11,9 @@ import Home from './site/Home';
 
 import PlantsIndex from './components/plants/PlantsIndex';
 import GardenIndex from './components/gardens/GardenIndex'
-
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
 
 
 function App() {
@@ -40,19 +42,13 @@ function App() {
   return (
     <div className="App">
       {console.log(sessionToken)}
-
-      <Sitebar />
-      <Home />
-      
-      <Auth updateToken={updateToken}/>
-
+      <Router>
+        <Sitebar />
+      </Router>
+      <Home updateToken={updateToken}/>
       
       <GardenIndex token={sessionToken}/>
-
       <PlantsIndex token={sessionToken}/>
-
-      
-
 
     </div>
   );
